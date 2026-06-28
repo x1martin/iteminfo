@@ -45,10 +45,11 @@ with app.app_context():
 @app.route('/item-image')
 def get_item_image():
     """Direct image API - returns raw PNG without background"""
-    item_id = request.args.get('id)
+    item_id = request.args.get('id')
+    key = request.args.get('key')
 
     # Validate key    
-    if key != 'NRCODEX':    
+    if key != 'ASTRO':    
         abort(403, description="Invalid key")    
   
     if not item_id:    
